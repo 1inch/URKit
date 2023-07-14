@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import BCCrypto
 
 public enum BytewordsDecodingError: LocalizedError {
     case invalidWord
@@ -172,7 +171,7 @@ public struct Bytewords {
 
     private static func appendChecksum(to data: Data) -> Data {
         var d = data
-        let checksum = crc32(data)
+        let checksum = CRC32.checksum(data: data)
         d.append(checksum.serialized)
         return d
     }
@@ -181,7 +180,7 @@ public struct Bytewords {
         let checksumSize = MemoryLayout<UInt32>.size
         guard data.count > checksumSize else { throw BytewordsDecodingError.invalidChecksum }
         let message = data.prefix(data.count - checksumSize)
-        let checksum = crc32(message)
+        let checksum = CRC32.checksum(data: message)
         let messageChecksum = deserialize(UInt32.self, Data(data.suffix(checksumSize)))
         guard messageChecksum == checksum else { throw BytewordsDecodingError.invalidChecksum }
         return message

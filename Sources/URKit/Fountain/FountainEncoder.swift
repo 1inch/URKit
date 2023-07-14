@@ -7,7 +7,6 @@
 
 import Foundation
 import DCBOR
-import BCCrypto
 
 // Implements Luby transform code rateless coding
 // https://en.wikipedia.org/wiki/Luby_transform_code
@@ -114,7 +113,7 @@ public final class FountainEncoder {
     public init(message: Data, maxFragmentLen: Int, firstSeqNum: UInt32 = 0, minFragmentLen: Int = 10) {
         assert(message.count <= UInt32.max)
         self.messageLen = message.count
-        self.checksum = crc32(message)
+        self.checksum = CRC32.checksum(data: message)
         self.maxFragmentLen = maxFragmentLen
         self.fragmentLen = Self.findNominalFragmentLength(messageLen: message.count, minFragmentLen: minFragmentLen, maxFragmentLen: maxFragmentLen)
         self.fragments = Self.partitionMessage(message, fragmentLen: fragmentLen)
