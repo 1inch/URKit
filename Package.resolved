@@ -3,10 +3,10 @@
     {
       "identity" : "bcswiftdcbor",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/BlockchainCommons/BCSwiftDCBOR",
+      "location" : "https://github.com/1inch/BCSwiftDCBOR",
       "state" : {
-        "revision" : "922746297fe733019b42b9083275eb2837296a7d",
-        "version" : "1.0.5"
+        "revision" : "91ddd3f2e0df5a3f0b3161c7d8dc58c3e3d216ba",
+        "version" : "1.0.6-oi.1"
       }
     },
     {
@@ -30,9 +30,9 @@
     {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/wolfmcnally/swift-collections",
+      "location" : "https://github.com/apple/swift-collections.git",
       "state" : {
-        "revision" : "53a8adc54374f620002a3b6401d39e0feb3c57ae",
+        "revision" : "94cf62b3ba8d4bed62680a282d4c25f9c63c2efb",
         "version" : "1.1.0"
       }
     },

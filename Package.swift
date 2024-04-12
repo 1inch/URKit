@@ -15,7 +15,7 @@ let package = Package(
             targets: ["URKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/BlockchainCommons/BCSwiftDCBOR", from: "1.0.0"),
+        .package(url: "https://github.com/1inch/BCSwiftDCBOR", from: "1.0.6-oi.1"),
     ],
     targets: [
         .target(
